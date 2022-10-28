@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .error { color: red }
+        .success { color: blue}
+    </style>
+</head>
+<body>
+    <div style="padding:20px">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        <form action="" method="post">
+            <div>
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" value="">
+            </div>
+            <div>
+                <label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+                <input type="password" id="password" name="password" value="">
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+    </div>
+</body>
+</html>

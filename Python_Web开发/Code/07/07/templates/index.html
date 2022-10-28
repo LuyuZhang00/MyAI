@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+{% if session['logged_in'] %}
+    欢迎{{session['username']}}登录
+{% else %}
+    请先登录!
+{% endif %}
+
+{{title|wordcount() }}
+<div></div>
+{{title|truncate(20)}}
+
+</body>
+</html>
